@@ -1,10 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { createClient } from '@supabase/supabase-js'
 
-const supabase = createClient(
-  process.env.NEXT_PUBLIC_SUPABASE_URL!,
-  process.env.SUPABASE_SERVICE_ROLE_KEY!
-)
 
 // Simple web search via Claude AI
 async function searchWithClaude(query: string): Promise<{ results: string; urls: string[] }> {
@@ -147,6 +143,10 @@ function buildEmailHtml(openings: any[], news: any[], upcomingDeadlines: any[]):
 }
 
 export async function POST(req: NextRequest) {
+  const supabase = createClient(
+    process.env.NEXT_PUBLIC_SUPABASE_URL!,
+    process.env.SUPABASE_SERVICE_ROLE_KEY!
+  )
   const results = { scanned: 0, openings_found: 0, news_found: 0, email_sent: false }
 
   try {
