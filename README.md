@@ -1,4 +1,4 @@
-# 🎯 Internship Tracker — Setup completo
+# Internship Tracker — Setup completo
 
 Stack: **Next.js + Supabase + Vercel + Resend**  
 Todo gratis. Scanner diario con IA. Notificaciones por Gmail.
